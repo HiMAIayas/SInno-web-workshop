@@ -25,7 +25,7 @@ export default function page() {
               return (
 
                 <div key={prod.id} className='min-w-[300px] cursor-pointer rounded-3xl hover:bg-slate-100 hover:scale-[1.1] flex flex-col items-center'
-                  onClick={()=>window.open(`/product/${prod.id}`)}
+                  onClick={()=>window.open(`/shop/${prod.id}`)}
                 >
                   <Image className='h-[200px] w-auto'
                     src={prod.img}

@@ -12,7 +12,7 @@ export default function Navbar() {
 
       <div className='flex gap-10'>
       <Link href={"/"}>Home</Link>
-        <Link href={"/Shop"}>Shop</Link>
+        <Link href={"/shop"}>Shop</Link>
         <Link href={"/Jail"}>Jail</Link>
         <p>|</p>
         <Link href={"/About-Us"}>About Us</Link>
