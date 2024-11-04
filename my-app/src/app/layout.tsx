@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {Lemon} from "next/font/google";
 
 const spartan = League_Spartan({
   subsets:["latin"]
@@ -18,6 +20,13 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const lemon = Lemon({
+  weight: ["400"],
+  variable: "--font-lemon",
+  subsets: ["latin"]
+})
+
+;
 
 export const metadata: Metadata = {
   title: "Orca Pudmaijing",
@@ -32,10 +41,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-xl`}
+
+        className={`${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-xl`}
+
+
       >
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
