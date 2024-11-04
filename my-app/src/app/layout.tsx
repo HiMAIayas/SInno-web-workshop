@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="en">
       <body
 
-        className={`${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-xl`}
+        className={`${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-lg md:text-2xl`}
 
 
       >
