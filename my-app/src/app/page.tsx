@@ -1,42 +1,76 @@
-
+"use client"
 import Navbar from '@/components/Navbar'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Home_Header from '@/components/Home_Header'
+import { products } from '@/data/products'
 
 export default function page() {
   return (
     <main className='min-h-screen w-full pt-16'>
-      <div className='flex bg-[#E4F7FF] justify-around '>
-        <div className=' flex flex-col pl-20 gap-8'>
-          {/* Orca */}
-          <div className='flex mt-20 gap-8 items-end'>
-            <p className='text-6xl font-bold text-[#651FC0]'>Orca</p>
-            <Image
-              src="/siit.svg" width={150} height={50} alt="headerpic"
-            ></Image>
-          </div>
 
-          <p className='w-[450px] '>
-          If you like Orca, You have to paid for admission.
-          But if you dont care about copyright, buy with us
-          </p>
+      <Home_Header></Home_Header>
+      <br></br>
 
-          <div className='flex justify-evenly w-[450px]'>
-            
-              <Link href={"/Shop"} className='p-3 bg-[#D9D9D9] rounded-xl hover:bg-[#D5B5FF] hover:text-[#651FC0]'>avoid copyright</Link>
-              <Link href={"/Shop"} className='p-3 bg-[#D9D9D9] rounded-xl hover:bg-[#D5B5FF] hover:text-[#651FC0]'>I am a police</Link>
-            
-          </div>
-
-        </div>
+      {/* Content */}
+      <div className='px-20'>
         <div>
-          <Image
-            src="/orca-header.png" width={500} height={500} alt="headerpic"
-          ></Image>
+          <p className='text-3xl'>Orca jub tong daii</p>
+          <br></br>
+          <div className='flex w-full overflow-x-scroll p-10'>
+            {products.filter((prod) => {
+              return prod.isJubable
+            }).map((prod) => {
+              return (
+
+                <div key={prod.id} className='min-w-[300px] cursor-pointer rounded-3xl hover:bg-slate-100 hover:scale-[1.1] flex flex-col items-center'
+                  onClick={()=>window.open(`/product/${prod.id}`)}
+                >
+                  <Image className='h-[200px] w-auto'
+                    src={prod.img}
+                    width={300}
+                    height={300}
+                    alt={prod.id.toString()}
+                  ></Image>
+                  <p>{prod.name}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <br></br>
+        <br></br>
+
+        <div>
+          <p className='text-3xl'>Orca mai mee yu jing</p>
+          <br></br>
+          <div className='flex w-full overflow-x-scroll p-10'>
+            {products.filter((prod) => {
+              return !prod.isJubable
+            }).map((prod) => {
+              return (
+
+                <div key={prod.id} className='min-w-[300px] rounded-3xl hover:bg-slate-100 hover:scale-[1.1] flex flex-col items-center'
+                onClick={()=>window.open(`/product/${prod.id}`)}
+                >
+                  <Image className='h-[200px] w-auto'
+                    src={prod.img}
+                    width={300}
+                    height={300}
+                    alt={prod.id.toString()}
+                  ></Image>
+                  <p>{prod.name}</p>
+                </div>
+              )
+            })}
+          </div>
         </div>
 
       </div>
+
+      <div className='h-screen'></div>
     </main>
   )
 }

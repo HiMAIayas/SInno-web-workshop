@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
+const spartan = League_Spartan({
+  subsets:["latin"]
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black text-xl`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-xl`}
       >
         <Navbar></Navbar>
         {children}
