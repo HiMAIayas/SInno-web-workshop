@@ -1,8 +1,7 @@
 "use client"
-import Navbar from '@/components/Navbar'
+
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Home_Header from '@/components/Home_Header'
 import { products } from '@/data/products'
 

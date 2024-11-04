@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 
 const navigation = [
@@ -17,6 +18,11 @@ const navigation = [
 export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  let pagename = "";
+  if (pathname!="/") pagename = pathname.split("/")[1];
+  
+  console.log("/"+pagename);
 
   return (
     <div className='z-10 fixed w-full'>
@@ -30,12 +36,12 @@ export default function Navbar() {
         </div>
 
         <div className='gap-8 lg:gap-10 hidden md:flex text-xl lg:text-2xl'>
-          <Link href={"/"}>Home</Link>
-          <Link href={"/shop"}>Shop</Link>
-          <Link href={"/jail"}>Jail</Link>
+          <Link href={"/"} className={`${pagename===""?"font-bold text-[#651FC0]":"font-normal text-black"}`}>Home</Link>
+          <Link href={"/shop"} className={`${pagename==="shop"?"font-bold text-[#651FC0]":"font-normal text-black"}`}>Shop</Link>
+          <Link href={"/jail"} className={`${pagename==="jail"?"font-bold text-[#651FC0]":"font-normal text-black"}`}>Jail</Link>
           <p>|</p>
-          <Link href={"/about"}>About Us</Link>
-          <Link href={"/contact"}>Contact</Link>
+          <Link href={"/about"} className={`${pagename==="about"?"font-bold text-[#651FC0]":"font-normal text-black"}`}>About Us</Link>
+          <Link href={"/contact"} className={`${pagename==="contact"?"font-bold text-[#651FC0]":"font-normal text-black"}`}>Contact</Link>
 
 
         </div>
@@ -71,7 +77,8 @@ export default function Navbar() {
             <div className='flex flex-col justify-center items-center '>
               {navigation.map((page,index)=>{
                 return(
-                  <Link key={index} href={page.link} className='w-full border-t-2 border-white text-center text-2xl p-2'
+                  <Link key={index} href={page.link} 
+                  className={`w-full border-t-2 border-white text-center text-2xl p-2 ${"/"+pagename===page.link?"font-bold text-[#651FC0]":"font-normal text-black"}`}
                   onClick={()=>setIsOpen(false)}
                   >{page.name}</Link>
                 )
