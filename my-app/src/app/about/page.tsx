@@ -5,7 +5,7 @@ export default function page() {
     return (
         <main className='min-h-screen w-full pt-56 sm:pt-96 px-5'>
             <div className='w-full relative h-96 font-[family-name:var(--font-lilita)]'>
-                <p className='absolute w-full left-5 top-0 text-4xl md:text-6xl font-bold'>CAtch ME IF YOU can</p>
+                <p className='absolute w-full left-5 top-0 text-4xl md:text-6xl font-bold z-10'>CAtch ME IF YOU can</p>
                 <div className='group'>
                     <Image className='absolute right-5 bottom-0 max-w-[100%] h-auto group-hover:scale-[1.1]'
                         src="/police.png"

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { type } from 'os'
 
 
 const navigation = [
@@ -18,14 +19,15 @@ const navigation = [
 export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
+  console.log(typeof setIsOpen);
   const pathname = usePathname();
   let pagename = "";
   if (pathname!="/") pagename = pathname.split("/")[1];
   
-  console.log("/"+pagename);
+  //console.log("/"+pagename);
 
   return (
-    <div className='z-10 fixed w-full'>
+    <div className='z-20 fixed w-full'>
 
 
       <div className='relative bg-[#C9E9F6] flex justify-between px-2 sm:px-8 lg:px-20 items-center  shadow-lg'>
