@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { League_Spartan } from "next/font/google";
+import { League_Spartan, Lemon, Lilita_One } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {Lemon} from "next/font/google";
 
 const spartan = League_Spartan({
   subsets:["latin"]
 });
+
+const lilita = Lilita_One({
+  weight: ["400"],
+  variable: "--font-lilita",
+  subsets: ["latin"]
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -42,7 +47,7 @@ export default function RootLayout({
     <html lang="en">
       <body
 
-        className={`${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-lg md:text-2xl`}
+        className={`${lilita.variable} ${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-lg md:text-2xl`}
 
 
       >
