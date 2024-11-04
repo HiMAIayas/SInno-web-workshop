@@ -8,15 +8,15 @@ import { products } from '@/data/products'
 
 export default function page() {
   return (
-    <main className='min-h-screen w-full pt-16'>
+    <main className='min-h-screen w-full py-16'>
 
       <Home_Header></Home_Header>
       <br></br>
 
       {/* Content */}
-      <div className='px-20'>
+      <div className='lg:px-20 px-10 my-10'>
         <div>
-          <p className='text-3xl'>Orca jub tong daii</p>
+          <p className='text-xl md:text-3xl'>Orca jub tong daii</p>
           <br></br>
           <div className='flex w-full overflow-x-scroll p-10'>
             {products.filter((prod) => {
@@ -52,8 +52,8 @@ export default function page() {
             }).map((prod) => {
               return (
 
-                <div key={prod.id} className='min-w-[300px] rounded-3xl hover:bg-slate-100 hover:scale-[1.1] flex flex-col items-center'
-                onClick={()=>window.open(`/product/${prod.id}`)}
+                <div key={prod.id} className='min-w-[300px] cursor-pointer rounded-3xl hover:bg-slate-100 hover:scale-[1.1] flex flex-col items-center'
+                onClick={()=>window.open(`/shop/${prod.id}`)}
                 >
                   <Image className='h-[200px] w-auto'
                     src={prod.img}
@@ -69,8 +69,9 @@ export default function page() {
         </div>
 
       </div>
+      
 
-      <div className='h-screen'></div>
+ 
     </main>
   )
 }
