@@ -31,10 +31,10 @@ export default function Navbar() {
 
       <div className='relative bg-[#C9E9F6] flex justify-between px-2 sm:px-8 lg:px-20 items-center  shadow-lg'>
 
-        <div className='flex'>
+        <Link href={"/"} className='flex'>
           <p className='text-3xl italic font-bold text-[#45B3E0] p-5 font-[family-name:var(--font-lemon)] drop-shadow-md'>Pudmaijing</p>
           <Image src='/navbar-orca.png' width={520} height={520} alt='' className='w-20'></Image>
-        </div>
+        </Link>
 
         <div className='gap-6 lg:gap-10 hidden md:flex text-xl lg:text-2xl'>
           <Link href={"/"} className={`${pagename === "" ? "font-bold text-[#651FC0]" : "font-normal text-black"}`}>Home</Link>
