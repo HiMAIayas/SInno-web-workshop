@@ -5,8 +5,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+
 const spartan = League_Spartan({
-  subsets:["latin"]
+  subsets: ["latin"]
 });
 
 const lilita = Lilita_One({
@@ -31,7 +32,7 @@ const lemon = Lemon({
   subsets: ["latin"]
 })
 
-;
+  ;
 
 export const metadata: Metadata = {
   title: "Orca Pudmaijing",
@@ -45,16 +46,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-
+      
+        <body 
         className={`${lilita.variable} ${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-lg md:text-2xl`}
-
-
-      >
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
-      </body>
+        >
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
+        </body>
+      
     </html>
   );
 }
