@@ -30,9 +30,11 @@ export default function ProductBuy(product: Product) {
       </div>
       
       <br></br>
+      <div className='flex justify-center md:justify-start'>
       <button className='bg-[#FFECA1] hover:bg-[#ffd943] border-2 border-[#ffd943] p-1 rounded-md text-xl px-10'
       onClick={handleOnClick}
       >Add To Cart</button>
+      </div>
 
     </div>
   )
