@@ -15,7 +15,7 @@ export const addCart = (cartObj: CartType) => {
 }
 
 export const getCart = () => {
-    let tmpArr:CartType[] = [{
+    const tmpArr:CartType[] = [{
         name:"",
         amount:1,
         price:2
@@ -46,4 +46,13 @@ export const deleteCart = (name: string) => {
         localStorage.setItem(cartLocalKey, JSON.stringify(tmpCartArr));
     }
 
+}
+
+export const setCart = (name:string, amount:number)=>{
+    const tmpCartArr = getCart();
+    const index = tmpCartArr.findIndex((cart: CartType) => cart.name === name)
+    if (index!=-1){
+        tmpCartArr[index].amount = amount;
+        localStorage.setItem(cartLocalKey, JSON.stringify(tmpCartArr));
+    }
 }

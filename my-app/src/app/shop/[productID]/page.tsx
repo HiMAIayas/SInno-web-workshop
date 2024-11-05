@@ -32,6 +32,8 @@ export default async function page(
                 <div className='w-1/2'>
                     <p className='text-4xl font-bold'>{product.name}</p>
                     <br></br>
+                    <p className='text-3xl font-bold'>{product.price}$</p>
+                    <br></br>
                     <div className='text-wrap'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellat id blanditiis dignissimos tempora quia, quae tempore quisquam molestias laboriosam saepe esse nam. Qui architecto, quam maiores in consequatur voluptate!</div>
                     
                     <br></br>
