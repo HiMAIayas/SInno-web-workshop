@@ -15,11 +15,7 @@ export const addCart = (cartObj: CartType) => {
 }
 
 export const getCart = () => {
-    const tmpArr:CartType[] = [{
-        name:"",
-        amount:1,
-        price:2
-    }];
+    const tmpArr:CartType[] = [];
     if (typeof window !== 'undefined') {
         const cartArr = localStorage.getItem(cartLocalKey);
         if (cartArr == null) {
