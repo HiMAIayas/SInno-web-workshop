@@ -19,8 +19,8 @@ export default async function page(
 
     return (
         <main className='min-h-screen w-full py-36'>
-            <div className='lg:px-20 px-10 flex'>
-                <div className='w-1/2'>
+            <div className='lg:px-20 px-10 flex flex-col md:flex-row'>
+                <div className='w-auto md:w-1/2'>
                     <Image
                     src={product.img}
                     width={600}
@@ -29,15 +29,18 @@ export default async function page(
                     ></Image>
                 </div>
                 
-                <div className='w-1/2'>
-                    <p className='text-4xl font-bold'>{product.name}</p>
+                <div className='w-auto md:w-1/2'>
+                    <p className='text-4xl font-bold text-center md:text-start'>{product.name}</p>
                     <br></br>
                     <p className='text-3xl font-bold'>{product.price}$</p>
                     <br></br>
                     <div className='text-wrap'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellat id blanditiis dignissimos tempora quia, quae tempore quisquam molestias laboriosam saepe esse nam. Qui architecto, quam maiores in consequatur voluptate!</div>
                     
                     <br></br>
+                    
                     <ProductBuy id={product.id} name={product.name} price={product.price} img={product.img} isJubable={product.isJubable}></ProductBuy>
+                    
+                    
                 </div>
                 
 
