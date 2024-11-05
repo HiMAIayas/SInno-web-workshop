@@ -4,7 +4,7 @@ import { League_Spartan, Lemon, Lilita_One } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CartContextProvider from "@/contexts/CartContext";
+
 
 const spartan = League_Spartan({
   subsets: ["latin"]
@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <CartContextProvider>
+      
         <body 
         className={`${lilita.variable} ${lemon.variable} ${geistSans.variable} ${geistMono.variable} ${spartan.className} antialiased bg-white text-black text-lg md:text-2xl`}
         >
@@ -54,7 +54,7 @@ export default function RootLayout({
           {children}
           <Footer></Footer>
         </body>
-      </CartContextProvider>
+      
     </html>
   );
 }
